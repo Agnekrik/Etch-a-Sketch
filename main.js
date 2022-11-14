@@ -1,7 +1,7 @@
 let color = "black";
 let click = true;
 
-function populateBoard(size) {
+function populateBoard(size) { //lenteles dydis
   let board = document.querySelector(".board");
   let squares = board.querySelectorAll("div");
   squares.forEach((div) => div.remove());
@@ -11,7 +11,7 @@ function populateBoard(size) {
   let amount = size * size;
   for (let i = 0; i < amount; i++) {
     let square = document.createElement("div");
-    square.addEventListener("mouseover", colorSquare);
+    square.addEventListener("mouseover", colorSquare); //spalvina
     square.style.backgroundColor = "white";
     board.insertAdjacentElement("beforeend", square);
   }
@@ -19,7 +19,7 @@ function populateBoard(size) {
 
 populateBoard(16);
 
-function changeSize(input) {
+function changeSize(input) { //perdaug langeliu
   if (input >= 2 && input <= 100) {
     document.querySelector(".error").style.display = "none";
     populateBoard(input);
